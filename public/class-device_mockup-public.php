@@ -107,31 +107,46 @@ class Device_mockup_Public {
 ////////////////////////
 	function display_mockup()
 	{
-		$content = '<div class="rwd-container">';
-			$content .= '<div class="img-container">';
-				$content .= '<img class="placeholder" src="'.plugin_dir_url( __FILE__ ).'img/devices.png" alt="responsive web design devices">';
-				$content .= 	'<img src="'.plugin_dir_url( __FILE__ ).'img/devices.png" alt="responsive web design devices">';
-					
-						$content .= '<div class="desktop-screen">';
-						$content .= 	'<div class="moving-screen moving-screen-desktop">';
-						$content .= 		'<img src="'.plugin_dir_url( __FILE__ ).'img/desktop-view-01.png" alt="desktop view">';
-							$content .= 	'<img src="'.plugin_dir_url( __FILE__ ).'img/desktop-view-02.png" alt="desktop view">';
-							$content .= '</div>';
-					$content .= 	'</div>';
-					$content .= '	<div class="tablet-screen">';
-						$content .= 	'<div class="moving-screen moving-screen-tablet">';
-							$content .= 	'<img src="'.plugin_dir_url( __FILE__ ).'img/tablet-view-01.png" alt="tablet view">';
-							$content .= 	'<img src="'.plugin_dir_url( __FILE__ ).'img/tablet-view-02.png" alt="tablet view">';
-							$content .= '</div>';
-					$content .= 	'</div>	';
-					$content .= 	'<div class="mobile-screen">';
-					$content .= 		'<div class="moving-screen moving-screen-mobile">';
-					$content .= 			'<img src="'.plugin_dir_url( __FILE__ ).'img/mobile-view.png" alt="mobile view">';
-					$content .= 			'<img src="'.plugin_dir_url( __FILE__ ).'img/mobile-view-2.png" alt="mobile view">';
-					$content .= 		'</div>';
-					$content .= 	'</div>';		
-					$content .= 	'</div>';
-			$content .= '</div>';
+		$content = '<div class="rwd-row">';
+
+			$content .= '<div class="rwd-container rwd-col">';
+
+				$content .= '<div class="img-container">';
+
+					$content .= '<img class="placeholder" src="'.plugin_dir_url( __FILE__ ).'img/devices.png" alt="responsive web design devices">';
+					$content .= '<img src="'.plugin_dir_url( __FILE__ ).'img/devices.png" alt="responsive web design devices">';
+						
+							$content .= '<div class="desktop-screen">';
+							$content .= 	'<div class="moving-screen moving-screen-desktop">';
+							$content .= 		'<img src="'.plugin_dir_url( __FILE__ ).'img/desktop-view-01.png" alt="desktop view">';
+								$content .= 	'<img src="'.plugin_dir_url( __FILE__ ).'img/desktop-view-02.png" alt="desktop view">';
+								$content .= '</div>';
+						$content .= 	'</div>';
+						$content .= '	<div class="tablet-screen">';
+							$content .= 	'<div class="moving-screen moving-screen-tablet">';
+								$content .= 	'<img src="'.plugin_dir_url( __FILE__ ).'img/tablet-view-01.png" alt="tablet view">';
+								$content .= 	'<img src="'.plugin_dir_url( __FILE__ ).'img/tablet-view-02.png" alt="tablet view">';
+								$content .= '</div>';
+						$content .= 	'</div>	';
+						$content .= 	'<div class="mobile-screen">';
+						$content .= 		'<div class="moving-screen moving-screen-mobile">';
+						$content .= 			'<img src="'.plugin_dir_url( __FILE__ ).'img/mobile-view.png" alt="mobile view">';
+						$content .= 			'<img src="'.plugin_dir_url( __FILE__ ).'img/mobile-view-2.png" alt="mobile view">';
+						$content .= 		'</div>';
+						$content .= 	'</div>';		
+						$content .= 	'</div>';
+
+				
+
+			$content .= '</div><!-- rwd-col-->';
+
+			$content .= '<div class="rwd-text-container rwd-col">';
+				$content .= '<h3>SITE TITLE</h3>';
+				$content .= '<p>This is a caption for the site</p>';
+				$content .= '<button>VISIT SITE</button>';
+			$content .= '</div><!--rwd-text-container rwd-col-->';
+
+		$content .= '</div><!-- rwd-row-->';
 
 		return $content;
 

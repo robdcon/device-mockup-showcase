@@ -113,42 +113,9 @@
 
 	const counterHandler = counter(images)
 	
-
-	
-
-	
-
 	 $(window).load(function()	
 	{
-		
-		
-		
 
-	
-
-	// function incrementCounter(i, n)
-	// {
-	// 	let index
-
-	// 	if((i + 1) > (n - 1))
-	// 	{
-	// 		index = 0
-	// 	}
-	// 	else
-	// 	{
-	// 		index = i + 1
-	// 	}
-
-	// 	return index
-		
-	// }
-
-	
-
-
-	
-
-	
 
 	function animateImage() 
 	{
