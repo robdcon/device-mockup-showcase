@@ -39,8 +39,23 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
-	align-items: center;
+	align-items: left;
+	overflow:hidden;
 }
+
+/* TEXT ITEMS */
+
+/* LINKS */
+
+a.rwd-link
+{
+	border-bottom:none;
+}
+
+/* .rwd-info
+{
+	opacity:0;
+} */
 
 /* SCREENS */
 

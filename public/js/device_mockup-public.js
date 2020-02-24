@@ -30,22 +30,33 @@
 
 
 	 */
-	const slider = new TimelineMax().repeat(-1).play()
+	const slider = new TimelineMax({repeat:-1}).play()
+	const slideDelay = 5
 	const images = [
 
 		{
-			desktop: 'img/desktop-view-01.png',
-			tablet: 'img/tablet-view-01.png',
-			mobile: 'img/desktop-view-01.png'
+			title: 'house of hair',
+			caption: 'Hair Dressing Academy in Cork, Ireland',
+			url: 'https://houseofhair.ie',
+			desktop: 'img/house-of-hair-desktop.png',
+			tablet: 'img/house-of-hair-tablet.png',
+			mobile: 'img/house-of-hair-mobile.png'
+			
 		},
 
 		{
+			title: 'Yoga Roots',
+			caption: 'Yoga Therapy with Aine Ni Fhaolain, Galway, Ireland',
+			url: 'https://yogaroots.ie',
 			desktop: 'img/yogaroots-desktop.png',
 			tablet: 'img/yogaroots-tablet.png',
 			mobile: 'img/yogaroots-mobile.png'
 		},
 
 		{
+			title: 'CORK ACADEMY OF HAIRDRESSING',
+			caption: 'Hairdressing Academy in Cork, Ireland',
+			url: 'https://corkacademyofhairdressing.ie',
 			desktop: 'img/corkacademyofhairdressing-desktop.png',
 			tablet: 'img/corkacademyofhairdressing-tablet.png',
 			mobile: 'img/corkacademyofhairdressing-mobile.png'
@@ -89,14 +100,13 @@
 
 	function getBaseUrl()
 	{
-		const image = $('.moving-screen-desktop img')
+		const image = $('.placeholder')
 		const baseUrl = $(image).attr('src').split('img/')[0]
 		return baseUrl
 	}
 
-	function changeImage()
+	function changeImage(i)
 	{
-		let i = counterHandler.getIndex()
 		let newImage = getCurrentImage()
 		let baseUrl = getBaseUrl()
 		let newDesktopUrl = baseUrl + newImage.desktop
@@ -108,64 +118,54 @@
 		$(desktopImage).attr('src', newDesktopUrl)
 		$(tabletImage).attr('src', newTabletUrl)
 		$(mobileImage).attr('src', newMobileUrl)
+		
+	}
+
+	function changeText(i)
+	{
+		const title = $('.rwd-title')
+		const caption = $('.rwd-caption')
+		const linkUrl = $('.rwd-link')
+		const titleText = images[i].title
+		const captionText = images[i].caption
+		const btnUrl = images[i].url
+		$(title).html(titleText)
+		$(caption).html(captionText)
+		$(linkUrl).attr('href', linkUrl)
+
+	}
+
+	function changeSlide()
+	{
+		let i = counterHandler.getIndex()
+		changeImage(i)
+		changeText(i)
 		counterHandler.increment()
+		console.log('changed')
 	}
 
 	const counterHandler = counter(images)
 	
 	 $(window).load(function()	
 	{
-
-
-	function animateImage() 
-	{
 		const rwd = $('.rwd-container')
-		slider.to(rwd, 1, {x:-500, opacity: 0}, 2, 'easeInOut')
-		slider.to($('.moving-screen-desktop img'), 1, {onComplete: changeImage})
-		slider.to(rwd, 1, {x:0, opacity:1}, 4, 'easeInOut')
-	}
+		const title = $('.rwd-title')
+		const caption = $('.rwd-caption')
+		const button = $('.rwd-button')
 
-	
-	
+		const animElements = $('[data-animated]')
 		
+	
+		function animateImage() 
+		{
 		
+			slider.fromTo(rwd, 1, {x:-500, autoAlpha: 0}, {x:0, autoAlpha: 1, ease:Power3.easeOut})
+			slider.staggerFromTo([title, caption, button], .5, {autoAlpha:0, x:-250 }, {autoAlpha:1, x:0 }, .25)
+			slider.to(animElements, 1, {autoAlpha: 0, onComplete:changeSlide}, slideDelay)
+		
+		}
+
 		animateImage() 
-		// console.log(images, "Length:" + arrayLength)
-		// console.log('update')
-		// const desktop = $('.moving-screen-desktop img')
-		// let baseUrl = $(desktop).attr('src').split('img/')[0]
-		// let index = counterHandler.increment()
-		// let img  = getImages(images, index)
-		// console.log('Image: ',img)
-		// let desktopImg = img.desktop
-		// let tabletImg = img.tablet
-		// let mobileImg = img.mobile
-		// let url = [baseUrl, desktopImg].join('')
-		// console.log("Image URL:",url)
-		
-		// const tablet = $('.moving-screen-tablet')
-		// const mobile = $('.moving-screen-mobile')
-		
-		// const timeline = new TimelineMax().repeat(-1).play()
-		// const timeline2 = new TimelineMax().repeat(-1).play()
-		// const timeline3 = new TimelineMax().repeat(-1).play()
-		
-	
-		
-		
-		
-
-		// timeline.to(desktop, 1, {y:"-50%"})
-		// timeline.to(desktop, 1, {y:"0%"}, 3)
-		// timeline.to(desktop, 1, {y:"0%"}, 6)
-
-		// timeline2.to(tablet, 1, {y:"-50%"})
-		// timeline2.to(tablet, 1, {y:"0%"}, 4)
-		// timeline2.to(tablet, 1, {y:"0%"}, 7)
-
-		// timeline3.to(mobile, 1, {y:"-50%"})
-		// timeline3.to(mobile, 1, {y:"0%"}, 5)
-		// timeline3.to(mobile, 1, {y:"0%"}, 8)
 	})
 
 })( jQuery );

@@ -109,7 +109,7 @@ class Device_mockup_Public {
 	{
 		$content = '<div class="rwd-row">';
 
-			$content .= '<div class="rwd-container rwd-col">';
+			$content .= '<div data-animated class="rwd-container rwd-col">';
 
 				$content .= '<div class="img-container">';
 
@@ -118,32 +118,30 @@ class Device_mockup_Public {
 						
 							$content .= '<div class="desktop-screen">';
 							$content .= 	'<div class="moving-screen moving-screen-desktop">';
-							$content .= 		'<img src="'.plugin_dir_url( __FILE__ ).'img/desktop-view-01.png" alt="desktop view">';
-								$content .= 	'<img src="'.plugin_dir_url( __FILE__ ).'img/desktop-view-02.png" alt="desktop view">';
+							$content .= 		'<img src="'.plugin_dir_url( __FILE__ ).'img/corkacademyofhairdressing-desktop.png" alt="desktop view">';
 								$content .= '</div>';
 						$content .= 	'</div>';
 						$content .= '	<div class="tablet-screen">';
 							$content .= 	'<div class="moving-screen moving-screen-tablet">';
-								$content .= 	'<img src="'.plugin_dir_url( __FILE__ ).'img/tablet-view-01.png" alt="tablet view">';
-								$content .= 	'<img src="'.plugin_dir_url( __FILE__ ).'img/tablet-view-02.png" alt="tablet view">';
+								$content .= 	'<img src="'.plugin_dir_url( __FILE__ ).'img/corkacademyofhairdressing-tablet" alt="tablet view">';
 								$content .= '</div>';
 						$content .= 	'</div>	';
 						$content .= 	'<div class="mobile-screen">';
 						$content .= 		'<div class="moving-screen moving-screen-mobile">';
-						$content .= 			'<img src="'.plugin_dir_url( __FILE__ ).'img/mobile-view.png" alt="mobile view">';
-						$content .= 			'<img src="'.plugin_dir_url( __FILE__ ).'img/mobile-view-2.png" alt="mobile view">';
+						$content .= 			'<img src="'.plugin_dir_url( __FILE__ ).'img/corkacademyofhairdressing-mobile" alt="mobile view">';
 						$content .= 		'</div>';
-						$content .= 	'</div>';		
-						$content .= 	'</div>';
+						$content .= 	'</div>';	
+
+				$content .= 	'</div>';
 
 				
 
 			$content .= '</div><!-- rwd-col-->';
 
 			$content .= '<div class="rwd-text-container rwd-col">';
-				$content .= '<h3>SITE TITLE</h3>';
-				$content .= '<p>This is a caption for the site</p>';
-				$content .= '<button>VISIT SITE</button>';
+				$content .= '<h3  data-animated class="rwd-info rwd-title">SEE EXAMPLES OF MY WORK</h3>';
+				$content .= '<p  data-animated class="rwd-info rwd-caption">Visit some of my clients sites to see what to expect</p>';
+				$content .= '<a href="#" class="rwd-link" target="_blank"><button  data-animated class="rwd-info rwd-button">VISIT SITE</button></a>';
 			$content .= '</div><!--rwd-text-container rwd-col-->';
 
 		$content .= '</div><!-- rwd-row-->';
